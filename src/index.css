@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+/* Self-hosted fonts — only the weights we actually use are loaded. */
+@import '@fontsource/prata/latin-400.css';
+@import '@fontsource/plus-jakarta-sans/latin-400.css';
+@import '@fontsource/plus-jakarta-sans/latin-500.css';
+@import '@fontsource/plus-jakarta-sans/latin-600.css';
+@import '@fontsource/plus-jakarta-sans/latin-700.css';
+
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                       */
+/* The Olaniyis Wedding — wine / gold / ivory, Prata + Plus Jakarta.    */
+/* Plus Jakarta Sans stands in for "Satoshi" (not distributable via     */
+/* npm) — swap the @import above + --font-body if a licensed Satoshi   */
+/* file becomes available.                                              */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-wine: #5a1024;
+  --color-wine-deep: #3b0716;
+  --color-burgundy: #741b35;
+  --color-gold: #c9a45c;
+  --color-gold-light: #e2c98a;
+  --color-ivory: #fffdf8;
+  --color-warm-white: #faf7f0;
+  --color-dark: #21171a;
+  --color-muted: #75676a;
+  /* A single warm accent used sparingly for "fun" touches — sparkles,
+     small badges — never for primary UI (buttons, text, backgrounds stay
+     on the wine/gold/ivory system). Keeps the extra liveliness from
+     tipping the palette off-brand. */
+  --color-blush: #e8b7a0;
+
+  --font-display: 'Prata', 'Iowan Old Style', ui-serif, Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-equalize: equalize 0.9s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes equalize {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gold/20;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory text-dark font-body antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* A visible, elegant focus ring for keyboard users everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-gold-light);
+    color: var(--color-wine-deep);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Respect the visitor's motion preference site-wide. Components still
+     apply their own entrance logic, but this is the last line of defense:
+     it neutralises anything that slips through. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1280px] px-6 sm:px-8 lg:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tracking-editorial {
+    letter-spacing: 0.28em;
+  }
+}
