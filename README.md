@@ -68,7 +68,7 @@ Form / Tally / WhatsApp number.
 src/
   components/    One folder per section (hero, story, gallery, rsvp, ...)
   components/common/   Shared primitives: Monogram, Image, Button, ScrollReveal...
-  components/three/    The lazy-loaded 3D gold wedding rings + WebGL fallback
+  components/three/    The lazy-loaded 3D hero rings + WebGL fallback
   data/          Structured content — this is what you edit for real content
   config/        Site-wide constants (external links)
   hooks/         useCountdown, useMusic, useReducedMotion, useScrollNav
@@ -80,7 +80,7 @@ scripts/
 
 ## Design system
 
-Colors, fonts and the gold wedding rings emblem are defined once and reused everywhere:
+Colors, fonts, and the two marks are defined once and reused everywhere:
 
 - Colors: `src/index.css` (`@theme` block) — wine, wine-deep, burgundy, gold,
   gold-light, ivory, warm-white, dark, muted.
@@ -90,16 +90,19 @@ Colors, fonts and the gold wedding rings emblem are defined once and reused ever
 - Image corners: a single `.rounded-elegant` utility (`src/index.css`) is
   used everywhere a real photo is framed (gallery, story, lightbox) — keeps
   one consistent radius instead of ad-hoc values.
-- Wedding rings emblem: `src/components/common/WeddingRings.tsx` (2D, pure
-  SVG, no font/image dependency) and `src/components/three/WeddingRingsScene.tsx` (3D).
+- Site-wide mark: `src/components/common/Monogram.tsx` — the A × M
+  monogram used in the navbar, footer, intro envelope, and final message.
+- Hero-only mark: `src/components/common/WeddingRings.tsx` (2D fallback) and
+  `src/components/three/WeddingRingsScene.tsx` (3D) — the two gold rings
+  with a small diamond accent, used only in the hero section.
 
 ## Performance & resilience notes
 
 - The intro overlay never blocks the page underneath from mounting or
   fetching — it's a purely visual layer (`src/components/intro/IntroExperience.tsx`).
-- The 3D wedding rings are code-split into their own chunk, lazy-loaded, and
+- The 3D hero rings are code-split into their own chunk, lazy-loaded, and
   only mount after confirming WebGL support; they fall back to the static 2D
-  mark on failure, low-power devices, or `prefers-reduced-motion`.
+  rings mark on failure, low-power devices, or `prefers-reduced-motion`.
 - Background music uses `preload="none"` until the visitor opts in, and the
   floating control disappears entirely if the audio fails to load.
 - All animation respects `prefers-reduced-motion` (see the media query in

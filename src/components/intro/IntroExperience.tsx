@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { WeddingRings } from '@/components/common/WeddingRings';
+import { Monogram } from '@/components/common/Monogram';
 import { Sparkles } from '@/components/common/Sparkles';
 import { useMusic } from '@/hooks/useMusic';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -113,7 +113,7 @@ export function IntroExperience() {
                 transition={{ duration: 0.7, delay: opened ? 0.85 : 0, ease: EASE_EDITORIAL }}
                 className="absolute inset-x-3 bottom-3 top-3 z-30 flex flex-col items-center justify-center gap-2 rounded-[calc(1rem-4px)] border border-gold/40 bg-ivory px-3 py-4"
               >
-                <WeddingRings size={34} tone="gold" frame={false} />
+                <Monogram size={34} tone="gold" ring={false} />
                 <p className="font-display text-sm sm:text-base text-wine">
                   {wedding.bride} &amp; {wedding.groom}
                 </p>
@@ -142,7 +142,7 @@ export function IntroExperience() {
                 transition={{ duration: 0.4, delay: opened ? 0.35 : 0.6, ease: EASE_EDITORIAL }}
                 className="absolute left-1/2 top-[52%] z-20 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold bg-warm-white shadow-md shadow-wine-deep/30"
               >
-                <WeddingRings size={22} tone="gold" frame={false} />
+                <Monogram size={22} tone="gold" ring={false} />
               </motion.div>
             </div>
           </motion.div>
