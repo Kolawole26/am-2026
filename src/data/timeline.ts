@@ -1,12 +1,17 @@
 import type { TimelineEvent } from '@/types';
 
-/** SAMPLE CONTENT — swap in the real order of the day whenever it's set. */
+/** The real order of the day, as given on the wedding invitation. */
 export const timelineEvents: TimelineEvent[] = [
-  { id: 'arrival', time: '12:00 PM', title: 'Guests Arrive', description: 'Find your seat, grab a welcome drink, and settle in — the fun is about to start.' },
-  { id: 'ceremony', time: '12:30 PM', title: 'Nikkah Ceremony', description: 'The formal union of Azeezat & Muiez — bring tissues, happy ones.' },
-  { id: 'photos', time: '2:00 PM', title: 'Couple Photographs', description: 'Family & bridal party photographs while the newlyweds soak it all in.' },
-  { id: 'reception', time: '4:00 PM', title: 'Reception Begins', description: "Doors open, music's on, and the real celebration kicks off." },
-  { id: 'dinner', time: '6:00 PM', title: 'Dinner Is Served', description: 'A feast fit for the occasion — second helpings very much encouraged.' },
-  { id: 'toasts', time: '7:30 PM', title: 'Toasts & Speeches', description: 'Laughter, love, and probably a few embarrassing stories from the wedding party.' },
-  { id: 'dance', time: '8:30 PM', title: 'First Dance & Celebration', description: "The dance floor opens and doesn't close until the very last song." },
+  { id: 'arrival', time: '01', title: 'Guest Arrival', description: '12:00 PM' },
+  { id: 'welcome', time: '02', title: 'Welcome Address', description: 'Traditional Wedding Begins' },
+  { id: 'introductions', time: '03', title: 'Introduction of Families' },
+  { id: 'entrance', time: '04', title: "Couple's Grand Entrance" },
+  { id: 'reception', time: '05', title: 'Wedding Reception' },
+  { id: 'food', time: '06', title: 'Food & Refreshment' },
+  { id: 'first-dance', time: '07', title: "Couple's First Dance" },
+  { id: 'cake', time: '08', title: 'Cutting of Cake' },
+  { id: 'games', time: '09', title: 'Games & Entertainment' },
+  { id: 'gifts', time: '10', title: 'Presentation of Gifts' },
+  { id: 'spraying', time: '11', title: 'Dance & Spraying' },
+  { id: 'thanks', time: '12', title: 'Vote of Thanks' },
 ];

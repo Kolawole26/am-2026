@@ -1,6 +1,6 @@
 import { Image } from '@/components/common/Image';
 import { ScrollReveal } from '@/components/common/ScrollReveal';
-import { Monogram } from '@/components/common/Monogram';
+import { WeddingRings } from '@/components/common/WeddingRings';
 import { Sparkles } from '@/components/common/Sparkles';
 import { finalImage } from '@/data/media';
 import { wedding } from '@/data/wedding';
@@ -15,7 +15,7 @@ export function FinalMessage() {
           height={finalImage.height}
           alt={finalImage.alt}
           sizes="100vw"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[50%_15%]"
         />
         <div className="absolute inset-0 bg-wine-deep/80" />
       </div>
@@ -27,7 +27,7 @@ export function FinalMessage() {
           And So, Our Forever Begins&hellip;
         </h2>
         <div className="mt-8">
-          <Monogram size={52} tone="gold" />
+          <WeddingRings size={52} tone="gold" />
         </div>
         <p className="mt-8 font-display text-xl sm:text-2xl tracking-[0.1em] text-gold-light">
           {wedding.bride} &amp; {wedding.groom}

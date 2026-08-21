@@ -30,6 +30,8 @@ export interface WeddingDetailItem {
   address?: string;
   note?: string;
   mapUrl?: string;
+  /** Optional CSS colors rendered as small dress-code swatches. */
+  swatches?: string[];
 }
 
 export interface TimelineEvent {
@@ -54,4 +56,6 @@ export interface GiftItem {
   image?: ImageAsset;
   info?: string;
   link?: string;
+  /** Extra detail lines shown under the item, e.g. bank account info. */
+  details?: string[];
 }

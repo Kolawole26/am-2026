@@ -22,7 +22,7 @@ export function OurStory() {
               >
                 {milestone.image && (
                   <ScrollReveal>
-                    <div className="overflow-hidden rounded-sm">
+                    <div className="overflow-hidden rounded-elegant">
                       <Image
                         basePath={toBasePath(milestone.image.src)}
                         width={milestone.image.width}

@@ -12,6 +12,17 @@ export function DetailCard({ detail, delay = 0 }: { detail: WeddingDetailItem; d
         {detail.venueName && <p className="font-body text-sm font-medium text-dark">{detail.venueName}</p>}
         {detail.address && <p className="font-body text-sm text-muted">{detail.address}</p>}
         {detail.note && <p className="font-body text-sm leading-relaxed text-muted">{detail.note}</p>}
+        {detail.swatches && (
+          <div className="mt-1 flex items-center gap-2.5" aria-hidden="true">
+            {detail.swatches.map((color, i) => (
+              <span
+                key={i}
+                className="h-6 w-6 rounded-full border border-gold/40 shadow-sm"
+                style={{ backgroundColor: color }}
+              />
+            ))}
+          </div>
+        )}
         {detail.mapUrl && (
           <a
             href={detail.mapUrl}

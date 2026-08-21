@@ -26,7 +26,7 @@ export function Gallery() {
               <button
                 type="button"
                 onClick={() => setActiveIndex(i)}
-                className="group relative block h-full w-full overflow-hidden rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4"
+                className="group relative block h-full w-full overflow-hidden rounded-elegant focus-visible:outline-2 focus-visible:outline-offset-4"
                 aria-label={`Open photo ${i + 1} of ${galleryImages.length}`}
               >
                 <Image

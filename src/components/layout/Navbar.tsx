@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Monogram } from '@/components/common/Monogram';
+import { WeddingRings } from '@/components/common/WeddingRings';
 import { Sparkles } from '@/components/common/Sparkles';
 import { useScrollNav } from '@/hooks/useScrollNav';
 import { wedding } from '@/data/wedding';
@@ -41,7 +41,7 @@ export function Navbar() {
             href="#top"
             className={`flex items-center gap-2.5 font-display text-sm sm:text-base tracking-editorial uppercase transition-colors duration-500 ${textTone}`}
           >
-            <Monogram size={30} tone={scrolled || menuOpen ? 'wine' : 'gold'} ring={false} />
+            <WeddingRings size={30} tone={scrolled || menuOpen ? 'wine' : 'gold'} frame={false} />
             <span className="hidden sm:inline">{wedding.websiteName}</span>
           </a>
 
@@ -92,7 +92,7 @@ export function Navbar() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="flex justify-center pt-10"
             >
-              <Monogram size={44} tone="gold" />
+              <WeddingRings size={44} tone="gold" />
             </motion.div>
             <ul className="flex flex-1 flex-col items-center justify-center gap-7">
               {NAV_LINKS.map((link, i) => (

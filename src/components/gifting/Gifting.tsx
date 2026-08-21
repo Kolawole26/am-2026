@@ -1,8 +1,6 @@
-import { Gift as GiftIcon, ExternalLink } from 'lucide-react';
+import { Gift as GiftIcon } from 'lucide-react';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { ScrollReveal } from '@/components/common/ScrollReveal';
-import { Image } from '@/components/common/Image';
-import { toBasePath } from '@/lib/paths';
 import { gifts } from '@/data/gifts';
 
 export function Gifting() {
@@ -11,48 +9,34 @@ export function Gifting() {
       <div className="container-editorial">
         <SectionHeading
           eyebrow="With Love"
-          title="Your Presence, Our Gift"
-          supporting="Your presence is already the greatest gift. For those who've asked, here are a few options."
+          title="Giving"
+          supporting="Your presence is already the greatest gift."
           tone="light"
         />
 
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {gifts.map((gift, i) => (
-            <ScrollReveal key={gift.id} delay={i * 0.08}>
-              <article className="flex h-full flex-col gap-4 border border-gold/25 bg-wine-deep/40 p-7">
-                {gift.image ? (
-                  <div className="overflow-hidden rounded-sm">
-                    <Image
-                      basePath={toBasePath(gift.image.src)}
-                      width={gift.image.width}
-                      height={gift.image.height}
-                      alt={gift.image.alt}
-                      sizes="(min-width: 1024px) 25vw, 90vw"
-                      className="h-40 w-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 text-gold">
-                    <GiftIcon size={20} strokeWidth={1.4} />
-                  </span>
-                )}
-                <h3 className="font-display text-xl text-ivory">{gift.name}</h3>
-                {gift.description && <p className="font-body text-sm text-ivory/75">{gift.description}</p>}
-                {gift.info && <p className="font-body text-xs text-gold-light">{gift.info}</p>}
-                {gift.link && (
-                  <a
-                    href={gift.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 font-body text-xs tracking-editorial uppercase text-gold hover:text-gold-light"
-                  >
-                    View Registry <ExternalLink size={13} strokeWidth={1.6} />
-                  </a>
-                )}
-              </article>
-            </ScrollReveal>
-          ))}
-        </div>
+        <ScrollReveal delay={0.1} className="mx-auto mt-14 max-w-md">
+          <ul className="flex flex-col divide-y divide-gold/20 border-y border-gold/20">
+            {gifts.map((gift) => (
+              <li key={gift.id} className="flex items-start gap-4 py-4">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/50 text-gold">
+                  <GiftIcon size={16} strokeWidth={1.4} />
+                </span>
+                <div>
+                  <span className="font-body text-base text-ivory/90">{gift.name}</span>
+                  {gift.details && (
+                    <ul className="mt-1 flex flex-col gap-0.5">
+                      {gift.details.map((detail) => (
+                        <li key={detail} className="font-body text-xs text-gold-light">
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </ScrollReveal>
       </div>
     </section>
   );

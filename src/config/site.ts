@@ -13,16 +13,16 @@ export const siteConfig = {
 } as const;
 
 export const rsvpConfig = {
-  /** Swap this for the real Google Form / Tally / etc. link when ready. */
-  formUrl: 'https://forms.gle/REPLACE_WITH_RSVP_FORM',
-  /** Used as a fallback / alternate RSVP channel. */
-  whatsappNumber: '2340000000000', // international format, no leading +/0
+  contacts: [
+    { name: 'Teslim', whatsappNumber: '2348143245848', displayPhone: '0814 324 5848' },
+    { name: 'Fatimah', whatsappNumber: '2349063527457', displayPhone: '0906 352 7457' },
+  ],
   whatsappMessage:
     "Hi! I'd love to RSVP for Azeezat & Muiez's wedding on 28 November 2026.",
 } as const;
 
 export const guestLoveConfig = {
-  whatsappNumber: '2340000000000',
+  whatsappNumber: rsvpConfig.contacts[0].whatsappNumber,
   whatsappMessage:
     'Hi Azeezat & Muiez! Congratulations on your wedding — sending you so much love ❤️',
 } as const;

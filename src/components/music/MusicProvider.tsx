@@ -15,7 +15,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     audio.src = '/audio/wedding-music.mp3';
     audio.loop = true;
     audio.preload = 'none'; // don't spend bandwidth until the visitor opts in
-    audio.volume = 0.55;
+    audio.volume = 0.3;
 
     const onError = () => setStatus('unavailable');
     audio.addEventListener('error', onError);

@@ -127,4 +127,11 @@
   .tracking-editorial {
     letter-spacing: 0.28em;
   }
+
+  /* The one image-corner radius used everywhere a real photo is framed
+     (gallery, story, gifting, lightbox) — deliberately excludes full-bleed
+     section backgrounds (hero, final message), which stay edge-to-edge. */
+  .rounded-elegant {
+    border-radius: 1rem;
+  }
 }

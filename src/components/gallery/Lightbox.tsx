@@ -100,7 +100,7 @@ export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) 
             alt={image.alt}
             priority
             sizes="90vw"
-            className="max-h-[75svh] w-auto rounded-sm object-contain"
+            className="max-h-[75svh] w-auto rounded-elegant object-contain"
           />
           <p className="font-body text-xs tracking-editorial uppercase text-ivory/60">
             {index + 1} / {images.length}

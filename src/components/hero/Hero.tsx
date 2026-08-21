@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Image } from '@/components/common/Image';
 import { Sparkles } from '@/components/common/Sparkles';
-import { Monogram3D } from '@/components/three/Monogram3D';
+import { WeddingRings3D } from '@/components/three/WeddingRings3D';
 import { wedding } from '@/data/wedding';
 import { heroImage } from '@/data/media';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -40,7 +40,7 @@ export function Hero() {
           alt={heroImage.alt}
           priority
           sizes="100vw"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[50%_15%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-wine-deep/80 via-wine/55 to-wine-deep/90" />
       </div>
@@ -61,7 +61,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={reduced ? undefined : item} className="mt-4">
-          <Monogram3D className="w-[clamp(160px,34vw,260px)] aspect-square" />
+          <WeddingRings3D className="w-[clamp(160px,34vw,260px)] aspect-square" />
         </motion.div>
 
         <motion.h1

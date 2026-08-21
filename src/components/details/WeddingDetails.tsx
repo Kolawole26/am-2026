@@ -1,5 +1,6 @@
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { DetailCard } from './DetailCard';
+import { FamilyInfo } from './FamilyInfo';
 import { weddingDetails } from '@/data/details';
 import { wedding } from '@/data/wedding';
 
@@ -13,6 +14,7 @@ export function WeddingDetails() {
             <DetailCard key={detail.id} detail={detail} delay={i * 0.08} />
           ))}
         </div>
+        <FamilyInfo />
       </div>
     </section>
   );
